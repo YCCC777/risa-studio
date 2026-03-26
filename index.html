@@ -360,8 +360,13 @@
     <!-- Quote card -->
     <div class="bg-gradient-to-br from-orange-50 via-red-50 to-amber-50 rounded-3xl p-10 text-center border border-coral/10">
       <i class="fa-solid fa-quote-left text-5xl text-coral/25 mb-5 block"></i>
-      <p class="text-2xl sm:text-3xl font-black text-charcoal leading-snug max-w-2xl mx-auto">
-        <span data-zh="「科技的目的不是取代人，" data-en="&quot;Technology's purpose is not to replace people,">「科技的目的不是取代人，</span><br><span data-zh="而是讓人" data-en="but to make people ">而是讓人</span><span class="text-coral" data-zh="變得更自由" data-en="more free">變得更自由</span><span data-zh="。」" data-en='.&quot;'>。」</span>
+      <!-- ZH quote -->
+      <p class="lang-zh text-2xl sm:text-3xl font-black text-charcoal leading-snug max-w-2xl mx-auto">
+        「科技的目的不是取代人，<br>而是讓人<span class="text-coral">變得更自由</span>。」
+      </p>
+      <!-- EN quote -->
+      <p class="lang-en hidden text-2xl sm:text-3xl font-black text-charcoal leading-snug max-w-2xl mx-auto">
+        &ldquo;Technology&rsquo;s purpose is not to replace <span class="text-coral">people</span>,<br>but to make them more free.&rdquo;
       </p>
       <p class="text-sm text-charcoal-lt mt-5 font-medium tracking-wide" data-zh="— Risa Studio 核心理念" data-en="— Risa Studio Core Belief">— Risa Studio 核心理念</p>
     </div>
@@ -785,6 +790,10 @@
       const val = el.getAttribute('data-' + currentLang + '-placeholder');
       if (val) el.placeholder = val;
     });
+
+    // Toggle lang-zh / lang-en visibility blocks
+    document.querySelectorAll('.lang-zh').forEach(el => el.classList.toggle('hidden', currentLang !== 'zh'));
+    document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
 
     // Update lang toggle button label
     const langLabel = document.getElementById('lang-label');
