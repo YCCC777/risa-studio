@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risa Studio｜用科技買回時間，將溫柔留給最愛</title>
+  <title id="page-title">Risa Studio｜用科技買回時間，將溫柔留給最愛</title>
 
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -149,9 +149,14 @@
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#philosophy" class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200">理念</a>
-        <a href="#services"   class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200">服務</a>
-        <a href="#contact" class="btn-coral !py-2 !px-5 text-sm">聯絡我們</a>
+        <a href="#philosophy" class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200" data-zh="理念" data-en="Philosophy">理念</a>
+        <a href="#services"   class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200" data-zh="服務" data-en="Services">服務</a>
+        <a href="#contact" class="btn-coral !py-2 !px-5 text-sm" data-zh="聯絡我們" data-en="Contact">聯絡我們</a>
+        <!-- Language toggle -->
+        <button id="lang-toggle" onclick="toggleLang()" class="flex items-center gap-1.5 text-xs font-semibold text-charcoal-lt hover:text-coral transition-colors duration-200 border border-gray-200 hover:border-coral/40 rounded-full px-3 py-1.5">
+          <i class="fa-solid fa-globe text-xs"></i>
+          <span id="lang-label">EN</span>
+        </button>
       </div>
 
       <!-- Mobile hamburger -->
@@ -162,9 +167,13 @@
 
     <!-- Mobile dropdown -->
     <div id="mobile-menu" class="md:hidden flex-col gap-1 pb-4 border-t border-gray-100 pt-3">
-      <a href="#philosophy" class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all">理念</a>
-      <a href="#services"   class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all">服務</a>
-      <a href="#contact"    class="mobile-link btn-coral mt-2 justify-center !py-2.5 !px-6 text-sm">聯絡我們</a>
+      <a href="#philosophy" class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all" data-zh="理念" data-en="Philosophy">理念</a>
+      <a href="#services"   class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all" data-zh="服務" data-en="Services">服務</a>
+      <a href="#contact"    class="mobile-link btn-coral mt-2 justify-center !py-2.5 !px-6 text-sm" data-zh="聯絡我們" data-en="Contact">聯絡我們</a>
+      <button onclick="toggleLang()" class="mobile-link mt-1 flex items-center gap-2 text-sm font-semibold text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all">
+        <i class="fa-solid fa-globe text-xs"></i>
+        <span data-zh="切換為英文" data-en="切換為中文">切換為英文</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -185,21 +194,21 @@
         </div>
 
         <h1 class="fade-up delay-200 text-4xl sm:text-5xl lg:text-[3.4rem] font-black text-charcoal leading-[1.18] mb-6">
-          用科技買回時間，<br>
-          將<span class="text-coral">溫柔</span>留給最愛
+          <span data-zh="用科技買回時間，" data-en="Buy Back Time with Technology,">用科技買回時間，</span><br>
+          <span data-zh="將" data-en="Reserve ">將</span><span class="text-coral" data-zh="溫柔" data-en="Warmth">溫柔</span><span data-zh="留給最愛" data-en=" for Those You Love">留給最愛</span>
         </h1>
 
-        <p class="fade-up delay-400 text-base sm:text-lg text-charcoal-lt leading-relaxed mb-10 max-w-lg">
+        <p class="fade-up delay-400 text-base sm:text-lg text-charcoal-lt leading-relaxed mb-10 max-w-lg" data-zh="我們透過智慧自動化方案，協助企業與個人從繁瑣庶務中解脫。<br>科技的目的，是讓你有更多時間陪伴家人、專注創意，活得更有溫度。" data-en="We help businesses and individuals break free from repetitive tasks through intelligent automation.<br>Technology's purpose is to give you more time for family, creativity, and a life with more warmth.">
           我們透過智慧自動化方案，協助企業與個人從繁瑣庶務中解脫。<br>
           科技的目的，是讓你有更多時間陪伴家人、專注創意，活得更有溫度。
         </p>
 
         <div class="fade-up delay-600 flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="btn-coral">
+          <a href="#contact" class="btn-coral" data-zh="與我們聊聊" data-en="Let's Talk">
             與我們聊聊
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
-          <a href="#services" class="btn-outline">
+          <a href="#services" class="btn-outline" data-zh="探索服務" data-en="Explore Services">
             探索服務
           </a>
         </div>
@@ -252,8 +261,8 @@
                   <i class="fa-regular fa-clock text-coral text-sm"></i>
                 </div>
                 <div class="flex-1">
-                  <p class="text-[11px] font-medium text-charcoal-lt">每週已釋放時間</p>
-                  <p class="text-xl font-black text-coral leading-tight">+12 小時</p>
+                  <p class="text-[11px] font-medium text-charcoal-lt" data-zh="每週已釋放時間" data-en="Weekly Time Saved">每週已釋放時間</p>
+                  <p class="text-xl font-black text-coral leading-tight" data-zh="+12 小時" data-en="+12 hrs">+12 小時</p>
                 </div>
               </div>
             </div>
@@ -261,7 +270,7 @@
             <!-- Progress bar -->
             <div class="mt-5 pt-5 border-t border-gray-100">
               <div class="flex justify-between items-center mb-2">
-                <span class="text-[11px] text-gray-400">自動化覆蓋率</span>
+                <span class="text-[11px] text-gray-400" data-zh="自動化覆蓋率" data-en="Automation Coverage">自動化覆蓋率</span>
                 <span class="text-[11px] font-bold text-coral">85%</span>
               </div>
               <div class="bg-gray-100 rounded-full h-2">
@@ -276,15 +285,15 @@
               <i class="fa-solid fa-heart text-white text-xs"></i>
             </div>
             <div class="leading-tight">
-              <p class="text-[10px] text-gray-400">科技，是為了</p>
-              <p class="text-sm font-bold text-charcoal">更有溫度的生活</p>
+              <p class="text-[10px] text-gray-400" data-zh="科技，是為了" data-en="Technology is for">科技，是為了</p>
+              <p class="text-sm font-bold text-charcoal" data-zh="更有溫度的生活" data-en="A Warmer Life">更有溫度的生活</p>
             </div>
           </div>
 
           <!-- Floating badge -->
           <div class="absolute -top-4 -right-4 bg-coral text-white rounded-2xl shadow-lg px-4 py-2.5 text-center">
             <i class="fa-solid fa-mug-hot text-xs text-white/70 mb-0.5 block"></i>
-            <p class="font-black text-sm leading-tight whitespace-nowrap">免費諮詢</p>
+            <p class="font-black text-sm leading-tight whitespace-nowrap" data-zh="免費諮詢" data-en="Free Chat">免費諮詢</p>
           </div>
         </div>
       </div>
@@ -304,10 +313,10 @@
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
         <i class="fa-solid fa-seedling text-xs"></i>
-        我們的理念
+        <span data-zh="我們的理念" data-en="Our Philosophy">我們的理念</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4">科技與溫柔的結合</h2>
-      <p class="text-charcoal-lt max-w-2xl mx-auto leading-relaxed text-base">
+      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4" data-zh="科技與溫柔的結合" data-en="Where Technology Meets Warmth">科技與溫柔的結合</h2>
+      <p class="text-charcoal-lt max-w-2xl mx-auto leading-relaxed text-base" data-zh="我們相信，最好的科技讓人感受不到它的存在——它靜靜在背後運作，<br class='hidden sm:block'>讓你得以全心投入那些真正重要的事。" data-en="We believe the best technology is invisible — it works quietly in the background,<br class='hidden sm:block'>so you can focus entirely on what truly matters.">
         我們相信，最好的科技讓人感受不到它的存在——它靜靜在背後運作，<br class="hidden sm:block">
         讓你得以全心投入那些真正重要的事。
       </p>
@@ -319,32 +328,32 @@
         <div class="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-coral/20 transition-colors duration-300">
           <i class="fa-solid fa-bolt text-2xl text-coral"></i>
         </div>
-        <h3 class="font-bold text-charcoal text-lg mb-2">自動化</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed">將重複性工作交給系統，讓人力回歸高價值任務</p>
+        <h3 class="font-bold text-charcoal text-lg mb-2" data-zh="自動化" data-en="Automation">自動化</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed" data-zh="將重複性工作交給系統，讓人力回歸高價值任務" data-en="Delegate repetitive tasks to systems and redirect human effort to high-value work">將重複性工作交給系統，讓人力回歸高價值任務</p>
       </div>
 
       <div class="group text-center p-8 rounded-3xl hover:bg-coral/5 transition-colors duration-300 border border-transparent hover:border-coral/10">
         <div class="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-coral/20 transition-colors duration-300">
           <i class="fa-solid fa-chart-line text-2xl text-coral"></i>
         </div>
-        <h3 class="font-bold text-charcoal text-lg mb-2">效率</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed">優化工作流程，讓每一分鐘都更有意義、更有產值</p>
+        <h3 class="font-bold text-charcoal text-lg mb-2" data-zh="效率" data-en="Efficiency">效率</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed" data-zh="優化工作流程，讓每一分鐘都更有意義、更有產值" data-en="Optimize workflows so every minute is more meaningful and productive">優化工作流程，讓每一分鐘都更有意義、更有產值</p>
       </div>
 
       <div class="group text-center p-8 rounded-3xl hover:bg-coral/5 transition-colors duration-300 border border-transparent hover:border-coral/10">
         <div class="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-coral/20 transition-colors duration-300">
           <i class="fa-solid fa-heart text-2xl text-coral"></i>
         </div>
-        <h3 class="font-bold text-charcoal text-lg mb-2">人性</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed">以人為本，科技服務的終點永遠是更美好的人際連結</p>
+        <h3 class="font-bold text-charcoal text-lg mb-2" data-zh="人性" data-en="Humanity">人性</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed" data-zh="以人為本，科技服務的終點永遠是更美好的人際連結" data-en="People-first. Technology's ultimate destination is always richer human connection">以人為本，科技服務的終點永遠是更美好的人際連結</p>
       </div>
 
       <div class="group text-center p-8 rounded-3xl hover:bg-coral/5 transition-colors duration-300 border border-transparent hover:border-coral/10">
         <div class="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-coral/20 transition-colors duration-300">
           <i class="fa-solid fa-users text-2xl text-coral"></i>
         </div>
-        <h3 class="font-bold text-charcoal text-lg mb-2">陪伴</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed">買回的時間，是陪伴孩子與家人最珍貴的禮物</p>
+        <h3 class="font-bold text-charcoal text-lg mb-2" data-zh="陪伴" data-en="Presence">陪伴</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed" data-zh="買回的時間，是陪伴孩子與家人最珍貴的禮物" data-en="The time reclaimed is the most precious gift — being there for your children and family">買回的時間，是陪伴孩子與家人最珍貴的禮物</p>
       </div>
     </div>
 
@@ -352,9 +361,9 @@
     <div class="bg-gradient-to-br from-orange-50 via-red-50 to-amber-50 rounded-3xl p-10 text-center border border-coral/10">
       <i class="fa-solid fa-quote-left text-5xl text-coral/25 mb-5 block"></i>
       <p class="text-2xl sm:text-3xl font-black text-charcoal leading-snug max-w-2xl mx-auto">
-        「科技的目的不是取代人，<br>而是讓人<span class="text-coral">變得更自由</span>。」
+        <span data-zh="「科技的目的不是取代人，" data-en="&quot;Technology's purpose is not to replace people,">「科技的目的不是取代人，</span><br><span data-zh="而是讓人" data-en="but to make people ">而是讓人</span><span class="text-coral" data-zh="變得更自由" data-en="more free">變得更自由</span><span data-zh="。」" data-en='.&quot;'>。」</span>
       </p>
-      <p class="text-sm text-charcoal-lt mt-5 font-medium tracking-wide">— Risa Studio 核心理念</p>
+      <p class="text-sm text-charcoal-lt mt-5 font-medium tracking-wide" data-zh="— Risa Studio 核心理念" data-en="— Risa Studio Core Belief">— Risa Studio 核心理念</p>
     </div>
 
   </div>
@@ -371,11 +380,10 @@
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
         <i class="fa-solid fa-sparkles text-xs"></i>
-        我們的服務
+        <span data-zh="我們的服務" data-en="Our Services">我們的服務</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4">為你量身打造的解決方案</h2>
-      <p class="text-charcoal-lt max-w-xl mx-auto leading-relaxed">
-        從流程盤點到全面自動化，我們陪伴你走完每一步，讓改變既無痛又有效。
+      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4" data-zh="為你量身打造的解決方案" data-en="Tailored Solutions for You">為你量身打造的解決方案</h2>
+      <p class="text-charcoal-lt max-w-xl mx-auto leading-relaxed" data-zh="從流程盤點到全面自動化，我們陪伴你走完每一步，讓改變既無痛又有效。" data-en="From process mapping to full automation, we guide you every step of the way — painless, effective change.">從流程盤點到全面自動化，我們陪伴你走完每一步，讓改變既無痛又有效。
       </p>
     </div>
 
@@ -387,19 +395,19 @@
         <div class="w-12 h-12 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-diagram-project text-xl text-coral"></i>
         </div>
-        <h3 class="text-xl font-bold text-charcoal mb-3">工作流程自動化</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed mb-5">
+        <h3 class="text-xl font-bold text-charcoal mb-3" data-zh="工作流程自動化" data-en="Workflow Automation">工作流程自動化</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed mb-5" data-zh="分析現有流程，識別重複性任務，設計並部署自動化方案，讓繁瑣工作悄悄消失。" data-en="Analyze existing processes, identify repetitive tasks, and deploy automation solutions so tedious work quietly disappears.">
           分析現有流程，識別重複性任務，設計並部署自動化方案，讓繁瑣工作悄悄消失。
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>流程盤點與優化分析
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="流程盤點與優化分析" data-en="Process mapping & optimization analysis">流程盤點與優化分析</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>自動化腳本開發與部署
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="自動化腳本開發與部署" data-en="Automation script development & deployment">自動化腳本開發與部署</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>定期維護與持續優化
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="定期維護與持續優化" data-en="Ongoing maintenance & continuous optimization">定期維護與持續優化</span>
           </li>
         </ul>
       </div>
@@ -409,19 +417,19 @@
         <div class="w-12 h-12 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-plug text-xl text-coral"></i>
         </div>
-        <h3 class="text-xl font-bold text-charcoal mb-3">系統整合服務</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed mb-5">
+        <h3 class="text-xl font-bold text-charcoal mb-3" data-zh="系統整合服務" data-en="System Integration">系統整合服務</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed mb-5" data-zh="串接各種工具與平台，讓資料無縫流動，告別手動複製貼上的重複惡夢。" data-en="Connect tools and platforms so data flows seamlessly — say goodbye to manual copy-paste nightmares.">
           串接各種工具與平台，讓資料無縫流動，告別手動複製貼上的重複惡夢。
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>API 整合與客製串接
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="API 整合與客製串接" data-en="API integration & custom connectors">API 整合與客製串接</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>資料庫同步解決方案
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="資料庫同步解決方案" data-en="Database sync solutions">資料庫同步解決方案</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>第三方平台整合
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="第三方平台整合" data-en="Third-party platform integration">第三方平台整合</span>
           </li>
         </ul>
       </div>
@@ -431,19 +439,19 @@
         <div class="w-12 h-12 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-robot text-xl text-coral"></i>
         </div>
-        <h3 class="text-xl font-bold text-charcoal mb-3">AI 智慧助手導入</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed mb-5">
+        <h3 class="text-xl font-bold text-charcoal mb-3" data-zh="AI 智慧助手導入" data-en="AI Assistant Integration">AI 智慧助手導入</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed mb-5" data-zh="為業務導入 AI 助手，自動處理詢問、分析數據、生成報告，讓 AI 成為最可靠的夥伴。" data-en="Bring AI assistants into your business to handle inquiries, analyze data, and generate reports automatically.">
           為業務導入 AI 助手，自動處理詢問、分析數據、生成報告，讓 AI 成為最可靠的夥伴。
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>客服機器人建置
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="客服機器人建置" data-en="Customer service chatbot setup">客服機器人建置</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>數據分析自動化
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="數據分析自動化" data-en="Data analysis automation">數據分析自動化</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>智慧報告自動生成
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="智慧報告自動生成" data-en="Smart report auto-generation">智慧報告自動生成</span>
           </li>
         </ul>
       </div>
@@ -453,19 +461,19 @@
         <div class="w-12 h-12 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-envelope-open-text text-xl text-coral"></i>
         </div>
-        <h3 class="text-xl font-bold text-charcoal mb-3">行銷自動化</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed mb-5">
+        <h3 class="text-xl font-bold text-charcoal mb-3" data-zh="行銷自動化" data-en="Marketing Automation">行銷自動化</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed mb-5" data-zh="自動化行銷漏斗，從潛客名單到個人化郵件，讓行銷效果倍增卻不增加人力。" data-en="Automate your marketing funnel — from lead lists to personalized emails — multiply results without adding headcount.">
           自動化行銷漏斗，從潛客名單到個人化郵件，讓行銷效果倍增卻不增加人力。
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>Email 自動化序列
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="Email 自動化序列" data-en="Email automation sequences">Email 自動化序列</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>潛客標籤與分類管理
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="潛客標籤與分類管理" data-en="Lead tagging & segmentation">潛客標籤與分類管理</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>轉換率優化追蹤
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="轉換率優化追蹤" data-en="Conversion rate optimization tracking">轉換率優化追蹤</span>
           </li>
         </ul>
       </div>
@@ -475,19 +483,19 @@
         <div class="w-12 h-12 bg-coral/10 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-file-invoice text-xl text-coral"></i>
         </div>
-        <h3 class="text-xl font-bold text-charcoal mb-3">財務與行政自動化</h3>
-        <p class="text-sm text-charcoal-lt leading-relaxed mb-5">
+        <h3 class="text-xl font-bold text-charcoal mb-3" data-zh="財務與行政自動化" data-en="Finance & Admin Automation">財務與行政自動化</h3>
+        <p class="text-sm text-charcoal-lt leading-relaxed mb-5" data-zh="自動產生發票、整理帳目、生成報表，從繁瑣行政解脫，專注於策略決策。" data-en="Auto-generate invoices, organize accounts, and produce reports — free yourself from admin to focus on strategy.">
           自動產生發票、整理帳目、生成報表，從繁瑣行政解脫，專注於策略決策。
         </p>
         <ul class="space-y-2">
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>自動發票與對帳
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="自動發票與對帳" data-en="Auto invoicing & reconciliation">自動發票與對帳</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>月結報表自動生成
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="月結報表自動生成" data-en="Monthly report auto-generation">月結報表自動生成</span>
           </li>
           <li class="flex items-center gap-2 text-sm text-charcoal-lt">
-            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i>費用分類與追蹤
+            <i class="fa-solid fa-circle-check text-coral text-xs flex-shrink-0"></i><span data-zh="費用分類與追蹤" data-en="Expense categorization & tracking">費用分類與追蹤</span>
           </li>
         </ul>
       </div>
@@ -497,12 +505,11 @@
         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
           <i class="fa-solid fa-wand-magic-sparkles text-xl text-white"></i>
         </div>
-        <h3 class="text-xl font-bold mb-3">不確定從何開始？</h3>
-        <p class="text-sm text-white/85 leading-relaxed mb-6">
+        <h3 class="text-xl font-bold mb-3" data-zh="不確定從何開始？" data-en="Not Sure Where to Start?">不確定從何開始？</h3>
+        <p class="text-sm text-white/85 leading-relaxed mb-6" data-zh="讓我們先聊聊你的現況。我們提供免費需求諮詢，幫你找出最適合的自動化切入點，完全零壓力。" data-en="Let's talk about your situation first. We offer a free consultation to help you find the best automation entry point — zero pressure.">
           讓我們先聊聊你的現況。我們提供免費需求諮詢，幫你找出最適合的自動化切入點，完全零壓力。
         </p>
-        <a href="#contact" class="inline-flex items-center gap-2 bg-white text-coral font-bold px-6 py-3 rounded-full text-sm hover:bg-orange-50 transition-colors duration-200">
-          預約免費諮詢
+        <a href="#contact" class="inline-flex items-center gap-2 bg-white text-coral font-bold px-6 py-3 rounded-full text-sm hover:bg-orange-50 transition-colors duration-200" data-zh="預約免費諮詢" data-en="Book a Free Consultation">
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
@@ -522,10 +529,10 @@
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
         <i class="fa-solid fa-comments text-xs"></i>
-        聯絡我們
+        <span data-zh="聯絡我們" data-en="Contact Us">聯絡我們</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4">讓我們開始一段對話</h2>
-      <p class="text-charcoal-lt max-w-xl mx-auto leading-relaxed">
+      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4" data-zh="讓我們開始一段對話" data-en="Let's Start a Conversation">讓我們開始一段對話</h2>
+      <p class="text-charcoal-lt max-w-xl mx-auto leading-relaxed" data-zh="無論你有明確需求，或只是想聊聊有哪些可能性，我們都很樂意傾聽。<br>填寫表單後，我們將在 1–2 個工作天內與你聯繫。" data-en="Whether you have a clear need or just want to explore possibilities, we're happy to listen.<br>We'll get back to you within 1–2 business days after you submit the form.">
         無論你有明確需求，或只是想聊聊有哪些可能性，我們都很樂意傾聽。<br>
         填寫表單後，我們將在 1–2 個工作天內與你聯繫。
       </p>
@@ -539,16 +546,16 @@
           <!-- Name -->
           <div>
             <label for="name" class="block text-sm font-semibold text-charcoal mb-2">
-              您的姓名 <span class="text-coral">*</span>
+              <span data-zh="您的姓名" data-en="Your Name">您的姓名</span> <span class="text-coral">*</span>
             </label>
-            <input type="text" id="name" name="name" placeholder="王小明" required
+            <input type="text" id="name" name="name" placeholder="王小明" data-zh-placeholder="王小明" data-en-placeholder="Jane Smith" required
               class="form-field" />
           </div>
 
           <!-- Email -->
           <div>
             <label for="email" class="block text-sm font-semibold text-charcoal mb-2">
-              電子郵件 <span class="text-coral">*</span>
+              <span data-zh="電子郵件" data-en="Email Address">電子郵件</span> <span class="text-coral">*</span>
             </label>
             <input type="email" id="email" name="email" placeholder="hello@example.com" required
               class="form-field" />
@@ -558,26 +565,28 @@
         <!-- Service type -->
         <div class="mb-5">
           <label for="service-type" class="block text-sm font-semibold text-charcoal mb-2">
-            您對哪類服務有興趣？
+            <span data-zh="您對哪類服務有興趣？" data-en="What service are you interested in?">您對哪類服務有興趣？</span>
           </label>
           <select id="service-type" name="service" class="form-field">
-            <option value="">請選擇（可略過）</option>
-            <option value="workflow">工作流程自動化</option>
-            <option value="integration">系統整合服務</option>
-            <option value="ai">AI 智慧助手導入</option>
-            <option value="marketing">行銷自動化</option>
-            <option value="finance">財務與行政自動化</option>
-            <option value="other">其他 / 尚不確定</option>
+            <option value="" data-zh="請選擇（可略過）" data-en="Please select (optional)">請選擇（可略過）</option>
+            <option value="workflow" data-zh="工作流程自動化" data-en="Workflow Automation">工作流程自動化</option>
+            <option value="integration" data-zh="系統整合服務" data-en="System Integration">系統整合服務</option>
+            <option value="ai" data-zh="AI 智慧助手導入" data-en="AI Assistant Integration">AI 智慧助手導入</option>
+            <option value="marketing" data-zh="行銷自動化" data-en="Marketing Automation">行銷自動化</option>
+            <option value="finance" data-zh="財務與行政自動化" data-en="Finance & Admin Automation">財務與行政自動化</option>
+            <option value="other" data-zh="其他 / 尚不確定" data-en="Other / Not sure yet">其他 / 尚不確定</option>
           </select>
         </div>
 
         <!-- Message -->
         <div class="mb-7">
           <label for="message" class="block text-sm font-semibold text-charcoal mb-2">
-            您的需求或想法 <span class="text-coral">*</span>
+            <span data-zh="您的需求或想法" data-en="Your Needs or Ideas">您的需求或想法</span> <span class="text-coral">*</span>
           </label>
           <textarea id="message" name="message" rows="5" required
             placeholder="請簡單描述您目前的困境，或希望改善的地方。例如：每週花大量時間整理報表、客戶詢問無法即時回應……任何想法都歡迎分享！"
+            data-zh-placeholder="請簡單描述您目前的困境，或希望改善的地方。例如：每週花大量時間整理報表、客戶詢問無法即時回應……任何想法都歡迎分享！"
+            data-en-placeholder="Please briefly describe your current challenges or what you'd like to improve. e.g., spending hours on weekly reports, unable to respond to customer inquiries in real time... any idea is welcome!"
             class="form-field resize-none"></textarea>
         </div>
 
@@ -585,9 +594,9 @@
         <div class="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-4">
           <p class="text-xs text-gray-400 flex items-center gap-1.5">
             <i class="fa-solid fa-shield-halved text-coral"></i>
-            您的資料受到保護，我們不會分享給任何第三方。
+            <span data-zh="您的資料受到保護，我們不會分享給任何第三方。" data-en="Your information is protected and will never be shared with third parties.">您的資料受到保護，我們不會分享給任何第三方。</span>
           </p>
-          <button type="submit" class="btn-coral flex-shrink-0">
+          <button type="submit" class="btn-coral flex-shrink-0" data-zh="送出訊息" data-en="Send Message">
             送出訊息
             <i class="fa-solid fa-paper-plane text-xs"></i>
           </button>
@@ -599,8 +608,8 @@
         <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <i class="fa-solid fa-circle-check text-3xl text-emerald-500"></i>
         </div>
-        <h4 class="text-xl font-bold text-charcoal mb-2">訊息已成功送出！</h4>
-        <p class="text-sm text-charcoal-lt leading-relaxed">
+        <h4 class="text-xl font-bold text-charcoal mb-2" data-zh="訊息已成功送出！" data-en="Message Sent Successfully!">訊息已成功送出！</h4>
+        <p class="text-sm text-charcoal-lt leading-relaxed" data-zh="感謝您的聯繫，我們將在 1–2 個工作天內透過 Email 與您回覆。<br>期待與您一起讓生活更有溫度 ✦" data-en="Thank you for reaching out. We'll reply by email within 1–2 business days.<br>Looking forward to making life warmer together ✦">
           感謝您的聯繫，我們將在 1–2 個工作天內透過 Email 與您回覆。<br>
           期待與您一起讓生活更有溫度 ✦
         </p>
@@ -621,14 +630,15 @@
     <div class="rounded-3xl border border-white/10 p-7 sm:p-8 mb-14 flex flex-col sm:flex-row items-center justify-between gap-6"
       style="background: linear-gradient(135deg, rgba(242,122,94,0.18) 0%, rgba(242,122,94,0.06) 100%);">
       <div>
-        <p class="text-white/50 text-xs font-semibold tracking-widest uppercase mb-1">探索我們的另一個子品牌</p>
+        <p class="text-white/50 text-xs font-semibold tracking-widest uppercase mb-1" data-zh="探索我們的另一個子品牌" data-en="Explore Our Other Brand">探索我們的另一個子品牌</p>
         <h3 class="text-2xl font-black text-white tracking-tight mb-1">Mokupo</h3>
-        <p class="text-white/65 text-sm leading-relaxed">另一個充滿創意與溫度的世界，正在等著你來探索。</p>
+        <p class="text-white/65 text-sm leading-relaxed" data-zh="另一個充滿創意與溫度的世界，正在等著你來探索。" data-en="Another world full of creativity and warmth, waiting for you to explore.">另一個充滿創意與溫度的世界，正在等著你來探索。</p>
       </div>
       <a href="https://yccc777.github.io/Mokupo/"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex-shrink-0 inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white font-bold px-7 py-3.5 rounded-full text-sm transition-all duration-250 hover:shadow-lg hover:shadow-coral/30 hover:-translate-y-0.5">
+        class="flex-shrink-0 inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white font-bold px-7 py-3.5 rounded-full text-sm transition-all duration-250 hover:shadow-lg hover:shadow-coral/30 hover:-translate-y-0.5"
+        data-zh="前往 Mokupo" data-en="Visit Mokupo">
         前往 Mokupo
         <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
       </a>
@@ -644,24 +654,24 @@
             <img src="Risa_studio_logo.png" alt="Risa Studio – Resonance Solutions" class="h-12 w-auto" />
           </div>
         </div>
-        <p class="text-white/55 text-sm leading-relaxed max-w-xs">
+        <p class="text-white/55 text-sm leading-relaxed max-w-xs" data-zh="用科技的力量，為人們買回時間，讓溫柔得以留存於每一個重要時刻。" data-en="Using the power of technology to buy back time, so warmth can remain in every important moment.">
           用科技的力量，為人們買回時間，讓溫柔得以留存於每一個重要時刻。
         </p>
       </div>
 
       <!-- Quick links -->
       <div>
-        <h4 class="text-xs font-semibold text-white/40 tracking-widest uppercase mb-5">快速導覽</h4>
+        <h4 class="text-xs font-semibold text-white/40 tracking-widest uppercase mb-5" data-zh="快速導覽" data-en="Quick Links">快速導覽</h4>
         <ul class="space-y-3">
-          <li><a href="#philosophy" class="text-sm text-white/60 hover:text-coral transition-colors duration-200">我們的理念</a></li>
-          <li><a href="#services"   class="text-sm text-white/60 hover:text-coral transition-colors duration-200">服務項目</a></li>
-          <li><a href="#contact"    class="text-sm text-white/60 hover:text-coral transition-colors duration-200">聯絡我們</a></li>
+          <li><a href="#philosophy" class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="我們的理念" data-en="Philosophy">我們的理念</a></li>
+          <li><a href="#services"   class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="服務項目" data-en="Services">服務項目</a></li>
+          <li><a href="#contact"    class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="聯絡我們" data-en="Contact">聯絡我們</a></li>
         </ul>
       </div>
 
       <!-- Contact info -->
       <div>
-        <h4 class="text-xs font-semibold text-white/40 tracking-widest uppercase mb-5">找到我們</h4>
+        <h4 class="text-xs font-semibold text-white/40 tracking-widest uppercase mb-5" data-zh="找到我們" data-en="Find Us">找到我們</h4>
         <ul class="space-y-3">
           <li class="flex items-center gap-2.5 text-sm text-white/60">
             <i class="fa-brands fa-threads text-coral w-4 text-center flex-shrink-0"></i>
@@ -679,7 +689,7 @@
     <!-- Bottom bar -->
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-white/35 text-xs">© 2026 Risa Studio. All rights reserved.</p>
-      <p class="text-white/25 text-xs">Powered by Resonance Solutions</p>
+      <p class="text-white/25 text-xs" data-zh="Powered by Resonance Solutions" data-en="Powered by Resonance Solutions">Powered by Resonance Solutions</p>
     </div>
 
   </div>
@@ -730,6 +740,57 @@
     });
   });
 
+  /* ── Language toggle ── */
+  let currentLang = 'zh';
+
+  function toggleLang() {
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    const html = document.getElementById('html-root');
+    html.lang = currentLang === 'zh' ? 'zh-TW' : 'en';
+
+    // Update page title
+    document.getElementById('page-title').textContent = currentLang === 'zh'
+      ? 'Risa Studio｜用科技買回時間，將溫柔留給最愛'
+      : 'Risa Studio｜Buy Back Time with Technology';
+
+    // Update all elements with data-zh / data-en (skip innerHTML elements separately)
+    document.querySelectorAll('[data-zh],[data-en]').forEach(el => {
+      const val = el.getAttribute('data-' + currentLang);
+      if (val === null) return;
+      // For elements that contain child elements (icons etc.), skip innerHTML replacement
+      if (el.children.length > 0) return;
+      el.textContent = val;
+    });
+
+    // Handle elements whose content has HTML (use innerHTML)
+    document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+      const val = el.getAttribute('data-' + currentLang);
+      if (val === null) return;
+      if (el.tagName === 'P' || el.tagName === 'SPAN') {
+        // Only update innerHTML for leaf-ish elements tagged for it
+        if (el.querySelectorAll('[data-zh],[data-en]').length === 0) {
+          el.innerHTML = val;
+        }
+      }
+    });
+
+    // Update select options
+    document.querySelectorAll('select option[data-zh],[data-en]').forEach(opt => {
+      const val = opt.getAttribute('data-' + currentLang);
+      if (val) opt.textContent = val;
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-zh-placeholder],[data-en-placeholder]').forEach(el => {
+      const val = el.getAttribute('data-' + currentLang + '-placeholder');
+      if (val) el.placeholder = val;
+    });
+
+    // Update lang toggle button label
+    const langLabel = document.getElementById('lang-label');
+    if (langLabel) langLabel.textContent = currentLang === 'zh' ? 'EN' : '中';
+  }
+
   /* ── Contact form submission ── */
   const contactForm = document.getElementById('contact-form');
   const successMsg  = document.getElementById('success-msg');
@@ -743,7 +804,9 @@
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !message) {
-      alert('請填寫所有必填欄位（姓名、電子郵件、需求描述）。');
+      alert(currentLang === 'zh'
+        ? '請填寫所有必填欄位（姓名、電子郵件、需求描述）。'
+        : 'Please fill in all required fields (Name, Email, Message).');
       return;
     }
 
