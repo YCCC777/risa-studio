@@ -151,6 +151,7 @@
       <div class="hidden md:flex items-center gap-8">
         <a href="#philosophy" class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200" data-zh="理念" data-en="Philosophy">理念</a>
         <a href="#services"   class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200" data-zh="服務" data-en="Services">服務</a>
+        <a href="#works"      class="text-sm font-medium text-charcoal-lt hover:text-coral transition-colors duration-200" data-zh="作品" data-en="Works">作品</a>
         <a href="#contact" class="btn-coral !py-2 !px-5 text-sm" data-zh="聯絡我們" data-en="Contact">聯絡我們</a>
         <!-- Language toggle -->
         <button id="lang-toggle" onclick="toggleLang()" class="flex items-center gap-1.5 text-xs font-semibold text-charcoal-lt hover:text-coral transition-colors duration-200 border border-gray-200 hover:border-coral/40 rounded-full px-3 py-1.5">
@@ -169,6 +170,7 @@
     <div id="mobile-menu" class="md:hidden flex-col gap-1 pb-4 border-t border-gray-100 pt-3">
       <a href="#philosophy" class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all" data-zh="理念" data-en="Philosophy">理念</a>
       <a href="#services"   class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all" data-zh="服務" data-en="Services">服務</a>
+      <a href="#works"      class="mobile-link block text-sm font-medium text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all" data-zh="作品" data-en="Works">作品</a>
       <a href="#contact"    class="mobile-link btn-coral mt-2 justify-center !py-2.5 !px-6 text-sm" data-zh="聯絡我們" data-en="Contact">聯絡我們</a>
       <button onclick="toggleLang()" class="mobile-link mt-1 flex items-center gap-2 text-sm font-semibold text-charcoal-lt hover:text-coral px-2 py-2 rounded-lg hover:bg-coral/5 transition-all">
         <i class="fa-solid fa-globe text-xs"></i>
@@ -524,8 +526,93 @@
 </section>
 
 
-<!-- ═══════════════════════════════════════════
-     CONTACT SECTION
+<!-- ═══════════════════════════════════════════     WORKS SECTION
+═════════════════════════════════════════════ -->
+<section id="works" class="py-24 bg-offwhite">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
+        <i class="fa-solid fa-puzzle-piece text-xs"></i>
+        <span data-zh="實際作品" data-en="Our Products">實際作品</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-charcoal mb-4" data-zh="我們做出來的東西" data-en="Things We've Built">我們做出來的東西</h2>
+      <p class="text-charcoal-lt max-w-xl mx-auto leading-relaxed" data-zh="不只是明代經營的期許——我們也亲手打造並發佈真實的產品。" data-en="Not just promises of automation — we also build and ship real products ourselves.">不只是明代經營的期許——我們也亲手打造並發佈真實的產品。</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+      <!-- StayScope -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm service-card">
+        <!-- Banner image -->
+        <div class="relative">
+          <img src="440 x 280.png" alt="StayScope banner" class="w-full h-52 object-cover" />
+          <span class="absolute top-3 right-3 inline-flex items-center gap-1.5 bg-emerald-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+            <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+            <span data-zh="已發佈" data-en="Live">已發佈</span>
+          </span>
+        </div>
+        <!-- Content -->
+        <div class="p-7">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="icon128.png" alt="StayScope icon" class="w-10 h-10 rounded-xl flex-shrink-0" />
+            <div>
+              <h3 class="text-lg font-black text-charcoal leading-tight">StayScope</h3>
+              <p class="text-xs text-charcoal-lt">Chrome Extension</p>
+            </div>
+          </div>
+          <p class="text-sm text-charcoal-lt leading-relaxed mb-6" data-zh="幫助您在瀏覽自賃房項目時，即時捕捉長期房客優惠與將小收益机會——讓竟中自動化發揮价値。" data-en="Helps you spot long-term guest discounts and arbitrage opportunities while browsing Airbnb listings — automation at work while you scroll.">幫助您在瀏覽自賃房項目時，即時捕捉長期房客優惠與將小收益机會——讓竟中自動化發揮价値。</p>
+          <a href="https://chromewebstore.google.com/detail/stayscope/khmhjiafkapmhakmpfcgmgikkffejnpm"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-charcoal hover:bg-charcoal-lt text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors duration-200">
+            <i class="fa-brands fa-chrome text-xs"></i>
+            <span data-zh="前往 Chrome 商店" data-en="View on Chrome Store">前往 Chrome 商店</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- HomeScope -->
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm service-card">
+        <!-- Banner placeholder -->
+        <div class="relative w-full h-52 flex items-center justify-center" style="background: linear-gradient(135deg, #e8f4f8 0%, #d0eaf3 100%);">
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background: linear-gradient(135deg, #2ea8c7 0%, #1d8aaa 100%)">
+              <i class="fa-solid fa-house-circle-check text-white text-2xl"></i>
+            </div>
+            <p class="text-xs font-semibold text-charcoal-lt tracking-wide">HomeScope</p>
+          </div>
+          <span class="absolute top-3 right-3 inline-flex items-center gap-1.5 bg-amber-400 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+            <i class="fa-solid fa-hourglass-half text-[9px]"></i>
+            <span data-zh="審核中" data-en="Under Review">審核中</span>
+          </span>
+        </div>
+        <!-- Content -->
+        <div class="p-7">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, #2ea8c7 0%, #1d8aaa 100%)">
+              <i class="fa-solid fa-house text-white text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-black text-charcoal leading-tight">HomeScope</h3>
+              <p class="text-xs text-charcoal-lt">Chrome Extension</p>
+            </div>
+          </div>
+          <p class="text-sm text-charcoal-lt leading-relaxed mb-6" data-zh="即將推出的房屋瀏覽助手，等待 Chrome 審核中。敌請期待上線！" data-en="A home-browsing assistant coming soon to the Chrome Web Store. Currently under review — stay tuned!">即將推出的房屋瀏覽助手，等待 Chrome 審核中。敌請期待上緜！</p>
+          <span class="inline-flex items-center gap-2 border-2 border-dashed border-gray-200 text-gray-400 font-semibold px-5 py-2.5 rounded-full text-sm cursor-default">
+            <i class="fa-solid fa-clock text-xs"></i>
+            <span data-zh="即將上線" data-en="Coming Soon">即將上緜</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════════════════════════════════════════     CONTACT SECTION
 ═══════════════════════════════════════════ -->
 <section id="contact" class="py-24 bg-white">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -670,6 +757,7 @@
         <ul class="space-y-3">
           <li><a href="#philosophy" class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="我們的理念" data-en="Philosophy">我們的理念</a></li>
           <li><a href="#services"   class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="服務項目" data-en="Services">服務項目</a></li>
+          <li><a href="#works"      class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="實際作品" data-en="Works">實際作品</a></li>
           <li><a href="#contact"    class="text-sm text-white/60 hover:text-coral transition-colors duration-200" data-zh="聯絡我們" data-en="Contact">聯絡我們</a></li>
         </ul>
       </div>
