@@ -782,7 +782,7 @@
 
     // Show / hide EN-only cards
     document.querySelectorAll('.en-only').forEach(el => {
-      el.style.display = currentLang === 'en' ? '' : 'none';
+      el.style.display = currentLang === 'en' ? 'block' : 'none';
     });
 
     // Update lang toggle button label
