@@ -134,6 +134,8 @@
 
     /* ── EN-only cards (hidden in zh mode) ── */
     .en-only { display: none; }
+    /* ── ZH-only cards (hidden in en mode) ── */
+    .zh-only { display: block; }
   </style>
 </head>
 
@@ -427,7 +429,7 @@
       </div>
 
       <!-- HomeScope -->
-      <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm service-card">
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm service-card zh-only">
         <!-- Banner image -->
         <div class="relative">
           <img src="440x280.png" alt="HomeScope banner" class="w-full h-52 object-cover" />
@@ -783,6 +785,10 @@
     // Show / hide EN-only cards
     document.querySelectorAll('.en-only').forEach(el => {
       el.style.display = currentLang === 'en' ? 'block' : 'none';
+    });
+    // Show / hide ZH-only cards
+    document.querySelectorAll('.zh-only').forEach(el => {
+      el.style.display = currentLang === 'zh' ? 'block' : 'none';
     });
 
     // Update lang toggle button label
